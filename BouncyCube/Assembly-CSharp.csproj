@@ -64,8 +64,9 @@
     <Compile Include="Assets\Box Controllers\Movement.cs" />
     <Compile Include="Assets\Box Controllers\ResetPosition.cs" />
     <Compile Include="Assets\Camera\Follow.cs" />
-    <Compile Include="Assets\Covfefe\Covfefe.cs" />
     <Compile Include="Assets\GameManager\GameManager.cs" />
+    <Compile Include="Assets\GameManager\LevelComplete.cs" />
+    <Compile Include="Assets\ScoreBoard\ScoreCalculator.cs" />
     <None Include="Assets\Shaders\CovfefeShader.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/krjan1/Desktop/git_stuff/CubeGame/BouncyCube/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

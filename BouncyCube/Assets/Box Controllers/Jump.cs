@@ -1,17 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
     public int forceConst = 5;
     public GameManager gameManager;
 
-    private bool canJump;
     private Rigidbody selfRigidbody;
-    private const int maxDoubleJump = 2;
-    public bool isGrounded;
+    private bool isGrounded;
     private bool canDoDoubleJump = false;
+    private int noJumps = 0;
+    private int noDoubleJumps = 0;
 
     void Start()
     {
@@ -51,6 +49,7 @@ public class Jump : MonoBehaviour
                 canDoDoubleJump = true;
                 selfRigidbody.velocity = new Vector3(selfRigidbody.velocity.x, 0, selfRigidbody.velocity.z);
                 selfRigidbody.AddForce(0, forceConst, 0, ForceMode.Impulse);
+                noJumps++;
             }
             else
             {
@@ -59,9 +58,25 @@ public class Jump : MonoBehaviour
                     canDoDoubleJump = false;
                     selfRigidbody.velocity = new Vector3(selfRigidbody.velocity.x, 0, selfRigidbody.velocity.z);
                     selfRigidbody.AddForce(0, forceConst, 0, ForceMode.Impulse);
+                    noDoubleJumps++;
                 }
             }
         }
 
     }
+
+    public int GetNoJumps()
+    {
+        int tempNoJumps = noJumps;
+        noJumps = 0;
+        return tempNoJumps;
+    }
+
+    public int GetNoDoubleJumps()
+    {
+        int tempNoDoubleJumps = noDoubleJumps;
+        noDoubleJumps = 0;
+        return tempNoDoubleJumps;
+    }
+
 }
