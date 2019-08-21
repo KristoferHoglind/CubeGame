@@ -112,6 +112,73 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &2657840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2657843}
+  - component: {fileID: 2657842}
+  - component: {fileID: 2657841}
+  - component: {fileID: 2657844}
+  m_Layer: 0
+  m_Name: FailPlane
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!65 &2657841
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2657840}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &2657842
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2657840}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2657843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2657840}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.167247, y: -100, z: 34.575672}
+  m_LocalScale: {x: 2000, y: 100, z: 2000}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2657844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2657840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 545ed8bf6fed88b43846099a94382d67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRigidbody: {fileID: 1877191121}
 --- !u!1 &64193263
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,6 +819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeJump: {fileID: 1877191122}
+  cubeFail: {fileID: 2657844}
 --- !u!4 &804484799
 Transform:
   m_ObjectHideFlags: 0
@@ -1290,7 +1358,6 @@ GameObject:
   - component: {fileID: 1877191118}
   - component: {fileID: 1877191117}
   - component: {fileID: 1877191121}
-  - component: {fileID: 1877191124}
   - component: {fileID: 1877191122}
   - component: {fileID: 1877191123}
   m_Layer: 10
@@ -1415,18 +1482,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceConst: 10
---- !u!114 &1877191124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877191116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dceec9285cdc7b4990a65fad8b7ec50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1887242328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,6 +1645,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   completeLevelUi: {fileID: 1887242328}
   scoreCalculator: {fileID: 804484798}
+  cubeJump: {fileID: 1877191122}
+  cubeFail: {fileID: 2657844}
 --- !u!4 &2039530015
 Transform:
   m_ObjectHideFlags: 0

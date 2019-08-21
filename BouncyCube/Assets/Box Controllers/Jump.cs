@@ -10,6 +10,7 @@ public class Jump : MonoBehaviour
     private bool canDoDoubleJump = false;
     private int noJumps = 0;
     private int noDoubleJumps = 0;
+    private bool isFinished = false;
 
     void Start()
     {
@@ -26,7 +27,11 @@ public class Jump : MonoBehaviour
 
         if(collision.gameObject.layer == 11 && isGrounded)
         {
-            gameManager.CompleteLevel();
+            if(!isFinished)
+            {
+                gameManager.CompleteLevel();
+                isFinished = true;
+            }
         }
     }
 
@@ -67,16 +72,12 @@ public class Jump : MonoBehaviour
 
     public int GetNoJumps()
     {
-        int tempNoJumps = noJumps;
-        noJumps = 0;
-        return tempNoJumps;
+        return noJumps;
     }
 
     public int GetNoDoubleJumps()
     {
-        int tempNoDoubleJumps = noDoubleJumps;
-        noDoubleJumps = 0;
-        return tempNoDoubleJumps;
+        return noDoubleJumps;
     }
 
 }
