@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,8 +23,9 @@ public class GameManager : MonoBehaviour
     public void CompleteLevel()
     {
         Debug.Log("You won!");
-        PlayerStats.TotalPoints += scoreCalculator.GetLevelScore();
-        Debug.Log("Your total score: " + PlayerStats.TotalPoints);
+
+        PlayerStats.TotalScore += scoreCalculator.GetLevelScore();
+        Debug.Log("Your total score: " + PlayerStats.TotalScore);
         Debug.Log("Your score on this level: " + scoreCalculator.GetLevelScore());
 
         PlayerStats.TotalJumps += cubeJump.GetNoJumps();
