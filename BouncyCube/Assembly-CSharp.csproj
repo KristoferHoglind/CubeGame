@@ -69,6 +69,7 @@
     <Compile Include="Assets\GameManager\GameManager.cs" />
     <Compile Include="Assets\GameManager\LevelComplete.cs" />
     <Compile Include="Assets\GameManager\PlayerStats.cs" />
+    <Compile Include="Assets\InGameUI\InGameUIStats.cs" />
     <Compile Include="Assets\MainMenuUI\HighScoreText.cs" />
     <Compile Include="Assets\MainMenuUI\NameInput.cs" />
     <Compile Include="Assets\MainMenuUI\NewGame.cs" />

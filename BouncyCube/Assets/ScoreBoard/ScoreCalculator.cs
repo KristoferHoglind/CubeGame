@@ -5,8 +5,8 @@ public class ScoreCalculator : MonoBehaviour
     public Jump cubeJump;
     public Fail cubeFail;
     private const int defaultScore = 1000;
-    private const float jumpScoreModifier = 0.01f;
-    private const float doubleJumpScoreModifier = 0.1f;
+    private const float jumpScoreModifier = 0.1f;
+    private const float doubleJumpScoreModifier = 0.01f;
     private const int failsScoreModifier = -1000;
 
     public int GetLevelScore()
