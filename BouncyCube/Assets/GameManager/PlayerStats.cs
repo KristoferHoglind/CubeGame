@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-
-public static class PlayerStats
-{
+﻿public static class PlayerStats {
     public static int TotalScore { get; set; }
 
     public static int TotalJumps { get; set; }
@@ -12,8 +9,7 @@ public static class PlayerStats
 
     public static string Name { get; set; }
 
-    public static void ResetPlayerStats()
-    {
+    public static void ResetPlayerStats() {
         TotalScore = 0;
         TotalJumps = 0;
         TotalDoubleJumps = 0;

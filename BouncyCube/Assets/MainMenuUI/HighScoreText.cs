@@ -1,15 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class HighScoreText : MonoBehaviour
-{
+public class HighScoreText : MonoBehaviour {
     public Text highScoreText;
 
-    private void Start()
-    {
+    private void Start() {
         string highScoreString = "High Score:";
-        for(int i = 0; i < GameConstants.highScoreRecordList; i++)
-        {
+        for(int i = 0; i < GameConstants.highScoreRecordList; i++) {
             string nameKey = i.ToString() + "_name";
             int offsetIdName = i + 1;
             string playerName = PlayerPrefs.GetString(nameKey, offsetIdName.ToString() + ".");

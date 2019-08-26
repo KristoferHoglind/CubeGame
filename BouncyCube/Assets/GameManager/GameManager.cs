@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : MonoBehaviour {
     public GameObject completeLevelUi;
     public ScoreCalculator scoreCalculator;
     public Jump cubeJump;
@@ -10,18 +9,16 @@ public class GameManager : MonoBehaviour
     private bool isGameEnded = false;
     private const float restartDelay = 1f;
 
-    public void EndGame()
-    {
-        if(!isGameEnded)
-        {
+    public void EndGame() {
+        if(!isGameEnded) {
             isGameEnded = true;
             Debug.Log("Game Over!");
             Invoke("Restart", restartDelay);
         }
     }
 
-    public void CompleteLevel()
-    {
+    public void CompleteLevel() {
+        // TODO: Remove all Debug-Log, this is integrated in InGameUI instead
         Debug.Log("You won!");
 
         PlayerStats.TotalScore += scoreCalculator.GetLevelScore();

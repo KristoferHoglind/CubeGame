@@ -1,6 +1,3 @@
-﻿using UnityEngine;
-
-public static class GameConstants
-{
+﻿public static class GameConstants {
     public const int highScoreRecordList = 5;
 }

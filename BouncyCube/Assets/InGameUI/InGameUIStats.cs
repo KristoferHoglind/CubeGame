@@ -1,15 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class InGameUIStats : MonoBehaviour
-{
+public class InGameUIStats : MonoBehaviour {
     public Text statsText;
     public Jump cubeJump;
     public Fail cubeFail;
     public ScoreCalculator scoreCalculator;
 
-    private void Update()
-    {
+    private void Update() {
         string statsString = "Stats";
         statsString += "\n";
         statsString += statStringFormat("Jumps", cubeJump.GetNoJumps(), PlayerStats.TotalJumps);
@@ -19,8 +17,7 @@ public class InGameUIStats : MonoBehaviour
         statsText.text = statsString;
     }
 
-    private string statStringFormat(string statName, int currentStat, int totalStat)
-    {
+    private string statStringFormat(string statName, int currentStat, int totalStat) {
         return statName + ": " + "\t" + currentStat + "\t" + "(" + totalStat + ")" + "\n";
     }
 
