@@ -2,8 +2,16 @@
 
 public class Fail : MonoBehaviour {
 
-    public Rigidbody playerRigidbody;
+    public GameObject playerCharacters;
+    private PlayerCharactersLoader charactersLoader;
+    private Rigidbody playerRigidbody;
     private int noFails = 0;
+
+    private void Start() {
+        charactersLoader = new PlayerCharactersLoader(playerCharacters);
+        GameObject player = charactersLoader.GetCharacter(CharacterSwapIndexTracker.CurrentId);
+        playerRigidbody = player.GetComponent<Rigidbody>();
+    }
 
     private void OnTriggerEnter() {
         noFails++;

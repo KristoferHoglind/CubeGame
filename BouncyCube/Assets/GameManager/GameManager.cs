@@ -3,18 +3,18 @@
 public class GameManager : MonoBehaviour {
     public GameObject completeLevelUi;
     public ScoreCalculator scoreCalculator;
-    public Jump cubeJump;
-    public Fail cubeFail;
+    public Fail playerFail;
+    public GameObject playerCharacters;
 
-    private bool isGameEnded = false;
     private const float restartDelay = 1f;
+    private PlayerCharactersLoader characterLoader;
+    private Jump playerJump;
 
-    public void EndGame() {
-        if(!isGameEnded) {
-            isGameEnded = true;
-            Debug.Log("Game Over!");
-            Invoke("Restart", restartDelay);
-        }
+    private void Start() {
+        characterLoader = new PlayerCharactersLoader(playerCharacters);
+        characterLoader.SetActiveCharacter(CharacterSwapIndexTracker.CurrentId);
+        GameObject player = characterLoader.GetCharacter(CharacterSwapIndexTracker.CurrentId);
+        playerJump = player.GetComponent<Jump>();
     }
 
     public void CompleteLevel() {
@@ -25,17 +25,17 @@ public class GameManager : MonoBehaviour {
         Debug.Log("Your total score: " + PlayerStats.TotalScore);
         Debug.Log("Your score on this level: " + scoreCalculator.GetLevelScore());
 
-        PlayerStats.TotalJumps += cubeJump.GetNoJumps();
+        PlayerStats.TotalJumps += playerJump.GetNoJumps();
         Debug.Log("Your total Number of Jumps: " + PlayerStats.TotalJumps);
-        Debug.Log("Your number of Jumps on this level: " + cubeJump.GetNoJumps());
+        Debug.Log("Your number of Jumps on this level: " + playerJump.GetNoJumps());
 
-        PlayerStats.TotalDoubleJumps += cubeJump.GetNoDoubleJumps();
+        PlayerStats.TotalDoubleJumps += playerJump.GetNoDoubleJumps();
         Debug.Log("Your total Number of Double Jumps: " + PlayerStats.TotalDoubleJumps);
-        Debug.Log("Your number of Double Jumps on this level: " + cubeJump.GetNoDoubleJumps());
+        Debug.Log("Your number of Double Jumps on this level: " + playerJump.GetNoDoubleJumps());
 
-        PlayerStats.TotalFails += cubeFail.GetNoFails();
+        PlayerStats.TotalFails += playerFail.GetNoFails();
         Debug.Log("Your total fails: " + PlayerStats.TotalFails);
-        Debug.Log("Your fails on this level: " + cubeFail.GetNoFails());
+        Debug.Log("Your fails on this level: " + playerFail.GetNoFails());
 
         completeLevelUi.SetActive(true);
     }

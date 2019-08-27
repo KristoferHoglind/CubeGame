@@ -1,23 +1,19 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class NewGame : MonoBehaviour {
 
-    public GameObject startGameButtonUi;
-    public GameObject nameInputField;
-    public GameObject newGameButtonUi;
+    public GameObject mainMenuScene1;
+    public GameObject mainMenuScene2;
 
     private void Start() {
         PlayerStats.ResetPlayerStats(); // Always reset a players stats when visiting main menu
-        startGameButtonUi.SetActive(false);
-        nameInputField.SetActive(false);
-        newGameButtonUi.SetActive(true);
+        mainMenuScene1.SetActive(true);
+        mainMenuScene2.SetActive(false);
     }
 
     public void StartGame() {
-        startGameButtonUi.SetActive(true);
-        nameInputField.SetActive(true);
-        newGameButtonUi.SetActive(false);
+        mainMenuScene1.SetActive(false);
+        mainMenuScene2.SetActive(true);
     }
 
 }

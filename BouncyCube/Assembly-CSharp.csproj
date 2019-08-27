@@ -62,21 +62,24 @@
   <ItemGroup>
     <Compile Include="Assets\Camera\Follow.cs" />
     <Compile Include="Assets\Camera\FollowMainMenu.cs" />
+    <Compile Include="Assets\GameManager\CharacterSwapIndexTracker.cs" />
     <Compile Include="Assets\GameManager\Fail.cs" />
     <Compile Include="Assets\GameManager\GameConstants.cs" />
     <Compile Include="Assets\GameManager\GameManager.cs" />
     <Compile Include="Assets\GameManager\LevelComplete.cs" />
+    <Compile Include="Assets\GameManager\PlayerCharactersLoader.cs" />
     <Compile Include="Assets\GameManager\PlayerStats.cs" />
     <Compile Include="Assets\InGameUI\InGameExit.cs" />
     <Compile Include="Assets\InGameUI\InGameUIStats.cs" />
     <Compile Include="Assets\MainMenuUI\HighScoreText.cs" />
     <Compile Include="Assets\MainMenuUI\NameInput.cs" />
     <Compile Include="Assets\MainMenuUI\NewGame.cs" />
+    <Compile Include="Assets\Player\CharacterSwap.cs" />
     <Compile Include="Assets\Player\Jump.cs" />
     <Compile Include="Assets\Player\Movement.cs" />
-    <Compile Include="Assets\Player\Player.cs" />
     <Compile Include="Assets\ScoreBoard\HighScoreList.cs" />
     <Compile Include="Assets\ScoreBoard\ScoreCalculator.cs" />
+    <None Include="Assets\3D Models\Book\Details.txt" />
     <None Include="Assets\Shaders\CovfefeShader.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/krjan1/Desktop/git_stuff/CubeGame/BouncyCube/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

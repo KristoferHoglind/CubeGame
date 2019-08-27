@@ -16,11 +16,12 @@ public class NameInput : MonoBehaviour {
     }
 
     public void StartGame() {
+        int nextSceneId = SceneManager.GetActiveScene().buildIndex + 1;
         if(inputField.text.Equals("")) {
             nameErrorText.SetActive(true);
         } else {
             SavePlayerName();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(nextSceneId);
             nameErrorText.SetActive(false);
         }
     }
